@@ -23,7 +23,7 @@ termux-setup-storage
 #### Step three
 Download and run the script:
 ```
-bash <(curl -s https://raw.githubusercontent.com/Isla-Walker/WiiLinkPatcherAndroid/main/termux.sh)
+bash <(curl -s https://raw.githubusercontent.com/hwalker56/WiiLinkPatcherAndroid/main/termux.sh)
 ```
 
 After running the script, your device will ask you to give Termux storage permissions. This is needed to copy the patched wads to your device's internal storage. After granting the storage permission, the script will install an Ubuntu environment and all patcher dependencies, then run the patcher. This may take a while.
