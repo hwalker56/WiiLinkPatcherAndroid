@@ -1,7 +1,7 @@
 #!/bin/bash
 
 DIRECTORY=/storage/emulated/0/WiiLink
-DOWNLOAD_URL=$(curl -L -s https://api.github.com/repos/hwalker56/WiiLinkPatcherAndroid/releases/latest | grep -o -E "https://(.*)WiiLinkPatcher_Termux-ARM64(.*)" | sed 's/\"//g')
+DOWNLOAD_URL=$(curl -L -s https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest | grep -o -E "https://(.*)WiiLinkPatcher_Linux-ARM64(.*)" | sed 's/\"//g')
 
 apt update
 apt install libicu-dev -y
