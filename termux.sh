@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if ! uname -m | grep -q "aarch64"; then
-    echo "Your device is not compatible! This script only supports ARM64 devices."
+if [[ $(uname -m) != *aarch64* && $(uname -m) != *arm* ]]; then
+    echo "Your device is not compatible! This script only supports ARM devices."
     echo "Exiting..."
     exit
 fi

@@ -1,7 +1,12 @@
 #!/bin/bash
 
 DIRECTORY=/storage/emulated/0/WiiLink
-DOWNLOAD_URL=$(curl -L -s https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest | grep -o -E "https://(.*)WiiLinkPatcher_Linux-ARM64(.*)" | sed 's/\"//g')
+
+if [[ $(uname -m) == *aarch64* ]]; then
+  DOWNLOAD_URL=$(curl -L -s https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest | grep -o -E "https://(.*)WiiLinkPatcher_Linux-ARM64(.*)" | sed 's/\"//g')
+else
+  DOWNLOAD_URL=$(curl -L -s https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest | grep -o -E "https://(.*)WiiLinkPatcher_Linux-ARM32(.*)" | sed 's/\"//g')
+fi
 
 apt update
 apt install libicu-dev -y
