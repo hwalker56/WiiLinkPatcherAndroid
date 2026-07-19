@@ -1,22 +1,3 @@
 #!/bin/bash
 
-if [[ $(uname -m) != *aarch64* && $(uname -m) != *arm* ]]; then
-    echo "Your device is not compatible! This script only supports ARM devices."
-    echo "Exiting..."
-    exit
-fi
-
-if [ ! -r "/storage/emulated/0" ]; then
-    echo "For this script to work, Termux needs file access permissions."
-    echo "Exiting..."
-    exit
-fi
-
-pkg update
-pkg install proot-distro -y
-
-if [ ! -d "/data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu" ]; then
-    pd i ubuntu
-fi
-
-pd sh ubuntu -- bash <(curl -s https://raw.githubusercontent.com/hwalker56/WiiLinkPatcherAndroid/main/ubuntu.sh)
+echo "This script is no longer supported! Follow the guide at https://gist.github.com/hwalker56/f64f3ac7fa0bdcfe62cf5326db89838f to run the WiiLink Patcher on Android."
